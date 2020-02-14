@@ -17,6 +17,11 @@ pipeline {
             bat '"C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe" TestAws.sln'
          }
       }
+      stage('Run Tests') {
+         steps {
+            bat '"C:\\Program Files (x86)\\NUnit.org\\nunit-console\\nunit3-console.exe" TestAws\\bin\\debug\\TestAws.dll'
+         }
+      }
       stage('Create Test Machine') {
          steps {
             echo "current build number: ${currentBuild.number}"
