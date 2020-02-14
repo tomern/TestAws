@@ -9,7 +9,7 @@ pipeline {
    stages {
       stage('Restore Nuget') {
          steps {
-            bat 'nuget.exe restore TestAws.sln'
+            bat 'nuget restore TestAws.sln'
          }
       }
       stage('Build') {
