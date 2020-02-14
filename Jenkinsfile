@@ -9,12 +9,12 @@ pipeline {
    stages {
       stage('Restore Nuget') {
          steps {
-            bat 'nuget restore TestAws.sln'
+            bat 'C:\\Users\\tomern23\\Downloads\\nuget.exe restore TestAws.sln'
          }
       }
       stage('Build') {
          steps {
-            bat 'MSBuild.exe TestAws.sln'
+            bat '"C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe" TestAws.sln'
          }
       }
       stage('Create Test Machine') {
