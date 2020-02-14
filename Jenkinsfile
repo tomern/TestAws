@@ -17,6 +17,12 @@ pipeline {
             bat '"C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe" TestAws.sln'
          }
       }
+      stage('Zip') {
+         steps {
+            zip zipFile: 'pvwa.zip', archive: false, dir: 'archive'
+            archiveArtifacts artifacts: 'pvwa.zip', fingerprint: true
+         }
+      }
       //stage('Run Tests1') {
       //   steps {
       //      bat '"C:\\Program Files (x86)\\NUnit.org\\nunit-console\\nunit3-console.exe" TestAws\\bin\\debug\\TestAws.dll'
