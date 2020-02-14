@@ -7,6 +7,16 @@ pipeline {
         timestamps()
    }
    stages {
+      stage('Restore Nuget') {
+         steps {
+            bat 'nuget.exe restore TestAws.sln'
+         }
+      }
+      stage('Build') {
+         steps {
+            bat 'MSBuild.exe TestAws.sln'
+         }
+      }
       stage('Create Test Machine') {
          steps {
             echo "current build number: ${currentBuild.number}"
