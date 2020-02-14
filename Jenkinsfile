@@ -19,8 +19,10 @@ pipeline {
       }
       stage('Zip') {
          steps {
-            zip zipFile: 'pvwa.zip', archive: false, dir: 'archive'
-            archiveArtifacts artifacts: 'pvwa.zip', fingerprint: true
+            script{
+               zip zipFile: 'pvwa.zip', archive: false, dir: 'archive'
+               archiveArtifacts artifacts: 'pvwa.zip', fingerprint: true
+            }
          }
       }
       //stage('Run Tests1') {
