@@ -39,9 +39,9 @@ pipeline {
       }
    }
     post {
-        always {
-            nunit testResultsPattern: 'TestResult.xml'
-           deleteDir();
-        }
+      always {
+         nunit testResultsPattern: 'TestResult.xml'
+         deleteDir();
+      }
     }
 }
