@@ -20,8 +20,8 @@ pipeline {
       stage('Zip') {
          steps {
             script{
-               zip zipFile: 'stam.zip', archive: false, dir: ''
-               archiveArtifacts artifacts: 'stam.zip', fingerprint: true
+               zip zipFile: 'tests.zip', archive: false, dir: ''
+               archiveArtifacts artifacts: 'tests.zip', fingerprint: true
             }
          }
       }
