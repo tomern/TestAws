@@ -28,7 +28,7 @@ pipeline {
       stage('Create Test Machine') {
          steps {
             echo "current build number: ${currentBuild.number}"
-            bat 'C:/Users/tomern23/AppData/Local/Programs/Python/Python37/python C:/Users/tomern23/PycharmProjects/manager/create_test_machine_mono.py'
+            bat 'C:/Users/tomern23/AppData/Local/Programs/Python/Python37/python C:/Users/tomern23/PycharmProjects/manager/copy_tests_to_test_machine.py'
             script{
                 PVWA_ADDRESS = readFile 'pvwa.txt'
                 echo PVWA_ADDRESS
