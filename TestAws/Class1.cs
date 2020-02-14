@@ -16,7 +16,7 @@ namespace TestAws
             var pinger = new Ping();
             PingReply reply = pinger.Send(url);
             var pingable = reply.Status == IPStatus.Success;
-            Console.WriteLine($"PVWA url is {url}");
+            Console.WriteLine($"Ping PVWA url {url}");
             Assert.True(pingable, "check if pingable");
         }
     }
