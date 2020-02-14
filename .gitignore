@@ -1,0 +1,9 @@
+packages/
+TestAws/bin/
+bin/Debug
+obj/Debug
+TestAws/obj/
+TestAws\bin\Debug
+TestAws\obj\Debug
+.nuget/
+.vs/
